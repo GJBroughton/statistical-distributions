@@ -57,6 +57,7 @@ class Binomial(Distribution):
 
         mean = self.n * self.p
         self.mean = mean
+
         return mean
 
     def calculate_stdev(self):
@@ -70,10 +71,6 @@ class Binomial(Distribution):
             float: standard deviation of the data set
 
         """
-
-        # TODO: calculate the standard deviation of the Binomial distribution. Store
-        #       the result in the self standard deviation attribute. Return the value
-        #       of the standard deviation.
 
         stdev = math.sqrt(self.mean * (1 - self.p))
         self.stdev = stdev
