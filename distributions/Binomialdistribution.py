@@ -74,7 +74,11 @@ class Binomial(Distribution):
         # TODO: calculate the standard deviation of the Binomial distribution. Store
         #       the result in the self standard deviation attribute. Return the value
         #       of the standard deviation.
-        pass
+
+        stdev = math.sqrt(self.mean * (1 - self.p))
+        self.stdev = stdev
+
+        return stdev
 
     def replace_stats_with_data(self):
 
