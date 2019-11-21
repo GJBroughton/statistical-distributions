@@ -187,21 +187,11 @@ class Binomial(Distribution):
         except AssertionError as error:
             raise
 
-        # TODO: Define addition for two binomial distributions. Assume that the
-        # p values of the two distributions are the same. The formula for
-        # summing two binomial distributions with different p values is more complicated,
-        # so you are only expected to implement the case for two distributions with equal p.
+        result = Binomial()
+        result.n = other.n + self.n
+        result.p = self.p
 
-        # the try, except statement above will raise an exception if the p values are not equal
-
-        # Hint: You need to instantiate a new binomial object with the correct n, p,
-        #   mean and standard deviation values. The __add__ method should return this
-        #   new binomial object.
-
-        #   When adding two binomial distributions, the p value remains the same
-        #   The new n value is the sum of the n values of the two distributions.
-
-        pass
+        return result
 
     def __repr__(self):
 
