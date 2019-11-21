@@ -113,11 +113,6 @@ class Binomial(Distribution):
         Returns:
             None
         """
-
-        # TODO: Use the matplotlib package to plot a bar chart of the data
-        #       The x-axis should have the value zero or one
-        #       The y-axis should have the count of results for each case
-        #
         #       For example, say you have a coin where heads = 1 and tails = 0.
         #       If you flipped a coin 35 times, and the coin landed on
         #       heads 20 times and tails 15 times, the bar chart would have two bars:
@@ -125,7 +120,11 @@ class Binomial(Distribution):
         #       1 on the x-axis and 20 on the y-axis
 
         #       Make sure to label the chart with a title, x-axis label and y-axis label
-        pass
+
+        plt.bar([0, 1], self.data)
+        plt.title('Bar')
+        plt.xlabel('Success/Failure')
+        plt.ylabel('Count')
 
     def pdf(self, k):
         """Probability density function calculator for the binomial distribution.
