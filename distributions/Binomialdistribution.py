@@ -128,7 +128,7 @@ class Binomial(Distribution):
         pass
 
     def pdf(self, k):
-        """Probability density function calculator for the gaussian distribution.
+        """Probability density function calculator for the binomial distribution.
 
         Args:
             k (float): point for calculating the probability density function
@@ -137,16 +137,14 @@ class Binomial(Distribution):
         Returns:
             float: probability density function output
         """
-
-        # TODO: Calculate the probability density function for a binomial distribution
-        #  For a binomial distribution with n trials and probability p,
-        #  the probability density function calculates the likelihood of getting
-        #   k positive outcomes.
-        #
         #   For example, if you flip a coin n = 60 times, with p = .5,
         #   what's the likelihood that the coin lands on heads 40 out of 60 times?
 
-        pass
+        binomial_coeff = math.factorial(self.n)/(math.factorial(k)*math.factorial(self.n - k))
+
+        pdf = binomial_coeff * self.p**k * (1 - self.p)**(self.n - k)
+
+        return pdf
 
     def plot_bar_pdf(self):
 
